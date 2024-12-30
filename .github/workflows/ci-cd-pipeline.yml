@@ -24,7 +24,7 @@ jobs:
       # Build, Push, and Deploy Patient Record Service
       - name: Build Patient Record Service
         run: |
-          docker build -t avishkaiit/patient_record_service/patient-record-service .
+          docker build -t patient-record-service .
       - name: Push Patient Record Service
         run: |
           docker push avishkaiit/patient_record_service/patient-record-service
