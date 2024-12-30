@@ -32,7 +32,7 @@ jobs:
         env:
           KUBECONFIG: ${{ secrets.KUBECONFIG }}
         run: |
-          kubectl apply -f ./patient_record_service/patient-record-service-deployment.yml
+          kubectl apply -f ./patient_record_service/patient-record-deployment.yml
           kubectl apply -f ./patient_record_service/patient-record-service.yml
 
       # Build, Push, and Deploy Appointment Scheduling Service
