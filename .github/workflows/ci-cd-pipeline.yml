@@ -24,10 +24,10 @@ jobs:
       # Build, Push, and Deploy Patient Record Service
       - name: Build Patient Record Service
         run: |
-          docker build -t avishkaiit/patient-record-service ./patient_record_service
+          docker build -t avishkaiit/patient-record-service:latest ./patient_record_service
       - name: Push Patient Record Service
         run: |
-          docker push avishkaiit/patient_record_service/patient-record-service
+          docker push avishkaiit/patient-record-service:latest
       - name: Deploy Patient Record Service
         env:
           KUBECONFIG: ${{ secrets.KUBECONFIG }}
