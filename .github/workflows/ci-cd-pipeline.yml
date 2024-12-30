@@ -24,7 +24,7 @@ jobs:
       # Build, Push, and Deploy Patient Record Service
       - name: Build Patient Record Service
         run: |
-          docker build -t avishkaiit/patient-record-service:latest ./patient_record_service/patient-record-service
+          docker build -t avishkaiit/patient-record-service .
       - name: Push Patient Record Service
         run: |
           docker push avishkaiit/patient-record-service:latest
@@ -38,7 +38,7 @@ jobs:
       # Build, Push, and Deploy Appointment Scheduling Service
       - name: Build Appointment Scheduling Service
         run: |
-          docker build -t avishkaiit/appointment-scheduling-service:latest ./appointment_scheduling_service/appointment-scheduling-service
+          docker build -t avishkaiit/appointment-scheduling-service .
       - name: Push Appointment Scheduling Service
         run: |
           docker push avishkaiit/appointment-scheduling-service:latest
@@ -52,7 +52,7 @@ jobs:
       # Build, Push, and Deploy Billing Service
       - name: Build Billing Service
         run: |
-          docker build -t avishkaiit/billing-service:latest ./billing_service/billing-service
+          docker build -t avishkaiit/billing-service .
       - name: Push Billing Service
         run: |
           docker push avishkaiit/billing-service:latest
@@ -66,7 +66,7 @@ jobs:
       # Build, Push, and Deploy Doctor Management Service
       - name: Build Doctor Management Service
         run: |
-          docker build -t avishkaiit/doctor-management-service:latest ./doctor_management_service/doctor-management-service
+          docker build -t avishkaiit/doctor-management-service .
       - name: Push Doctor Management Service
         run: |
           docker push avishkaiit/doctor-management-service:latest
