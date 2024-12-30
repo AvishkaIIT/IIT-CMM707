@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: patient-record-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: patient-record-service
+  template:
+    metadata:
+      labels:
+        app: patient-record-service
+    spec:
+      containers:
+      - name: patient-record-service
+        image: patient-record-service:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000
