@@ -14,6 +14,12 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
+       # Set up KUBECONFIG
+      - name: Set up KUBECONFIG
+        run: |
+          echo "${{ secrets.KUBERNETES_TOKEN }}" | base64 -d > kubeconfig
+          export KUBECONFIG=$(pwd)/kubeconfig
+
       # Log in to Docker Hub
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
@@ -30,7 +36,7 @@ jobs:
           docker push avishkaiit/patient-record-service:latest
       - name: Deploy Patient Record Service
         env:
-          KUBERNETES_TOKEN: ${{ secrets.KUBERNETES_TOKEN }}
+          KUBECONFIG: $(pwd)/kubeconfig
         run: |
           kubectl apply -f ./patient_record_service/patient-record-deployment.yml
           kubectl apply -f ./patient_record_service/patient-record-service.yml
