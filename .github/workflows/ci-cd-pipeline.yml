@@ -38,7 +38,7 @@ jobs:
         env:
           KUBERNETES_TOKEN: ${{ secrets.KUBERNETES_TOKEN }}
         run: |
-          kubectl apply -f ./patient_record_service/patient-record-deployment.yml
+          kubectl apply -f ./patient_record_service/patient-record-deployment.yml --server: https://127.0.0.1:64172
           kubectl apply -f ./patient_record_service/patient-record-service.yml
 
       # Build, Push, and Deploy Appointment Scheduling Service
