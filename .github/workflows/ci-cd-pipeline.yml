@@ -36,7 +36,7 @@ jobs:
           docker push avishkaiit/patient-record-service:latest
       - name: Deploy Patient Record Service
         env:
-          KUBERNETES_TOKEN: ${{ secrets.KUBERNETES_TOKEN }}
+          KUBECONFIG: ${{ secrets.KUBECONFIG }}
         run: |
           kubectl apply -f ./patient_record_service/patient-record-deployment.yml --server=https://127.0.0.1:64172 --username=avishkaiit --password=Avi8047#IIT
           kubectl apply -f ./patient_record_service/patient-record-service.yml
